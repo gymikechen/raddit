@@ -16,8 +16,8 @@
 
 <% if @link.user == current_user -%>
 	<div class="btn-group">
-		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+		<%= link_to '編輯', edit_link_path(@link), class: "btn btn-default" %>
+		<%= link_to '刪除', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 	</div>
 <% end %>
 
@@ -33,5 +33,5 @@
     <%= f.text_area :body, class: "form-control" %>
   </div>
   <br>
-  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+  <%= f.submit "新增留言", class: "btn btn-primary" %>
 <% end %>

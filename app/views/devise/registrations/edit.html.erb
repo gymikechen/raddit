@@ -9,7 +9,7 @@
       <div class="form-inputs">
 
       <div class="form-group">
-        <%= f.label :name %>
+        <%= f.label '使用者名稱' %>
         <%= f.text_field :name, class: "form-control", :autofocus => true %>
       </div>
 
@@ -19,27 +19,20 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.label '新密碼' %> <i>(如果沒有要更改密碼，請留空白)</i>
         <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+        <%= f.label '目前密碼' %> <i>(we need your current password to confirm your changes)</i>
         <%= f.password_field :current_password, class: "form-control" %>
       </div>
 
       </div>
 
       <div class="form-group">
-        <%= f.submit "Update", class: "btn btn-primary" %>
+        <%= f.submit "更新帳號資料", class: "btn btn-primary" %>
       </div>
 
     <% end %>
-  </div>
-  <div class="panel-footer">
-
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %></p>
-
   </div>
