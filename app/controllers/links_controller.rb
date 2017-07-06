@@ -16,7 +16,11 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    @link = current_user.links.build
+    if current_user.admin?
+      @link = current_user.links.build
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /links/1/edit
@@ -83,7 +87,7 @@ class LinksController < ApplicationController
 
     def authorized_user
       @link = current_user.links.find_by(id: params[:id])
-      redirect_to links_path, notice: "Not authorized to edit this link" if @link.nil?
+      redirect_to links_path, notice: "Not authorized" if @link.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

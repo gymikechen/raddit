@@ -2,7 +2,7 @@
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %><br>
-      <small class="author">在 <%= time_ago_in_words(link.created_at) %> 前由 <%= link.user.name %> 發布</small>
+      <small class="author">由 <%= link.user.name %> 發布</small>
     </h2>
 
     <div class="btn-group">

@@ -28,10 +28,12 @@
 <div id="comments">
   <%= render :partial => @link.comments %>
 </div>
-<%= simple_form_for [@link, Comment.new]  do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
-  </div>
-  <br>
-  <%= f.submit "新增留言", class: "btn btn-primary" %>
+<% if current_user.admin? -%>
+  <%= simple_form_for [@link, Comment.new]  do |f| %>
+    <div class="field">
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.submit "新增留言", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
